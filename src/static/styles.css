@@ -726,7 +726,7 @@ footer {
   transform: scale(0.95);
 }
 
-/* Adjust for mobile */
+/* Adjust for mobile - reposition toggle below user login controls */
 @media (max-width: 767px) {
   #dark-mode-toggle {
     right: 10px;

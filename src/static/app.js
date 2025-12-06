@@ -260,12 +260,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dark mode functionality
   function initializeDarkMode() {
-    // Check localStorage for saved preference
+    // Check localStorage for saved preference (defaults to light mode if not set)
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
       themeIcon.textContent = "☀️";
     } else {
+      // Default to light mode for first-time visitors or light mode preference
       themeIcon.textContent = "🌙";
     }
   }
