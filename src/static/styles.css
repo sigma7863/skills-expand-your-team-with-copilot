@@ -32,6 +32,40 @@
   --info-light: #d1ecf1;
 }
 
+/* Dark mode color palette */
+body.dark-mode {
+  /* Primary colors - adjusted for dark mode */
+  --primary: #5c6bc0;
+  --primary-light: #8e99f3;
+  --primary-dark: #26418f;
+  --primary-text: #ffffff;
+
+  /* Secondary colors */
+  --secondary: #ff9800;
+  --secondary-light: #ffc947;
+  --secondary-dark: #c66900;
+  --secondary-text: #000000;
+
+  /* Neutral colors - dark mode */
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border: #333333;
+  --border-light: #2a2a2a;
+  --border-focus: #404040;
+
+  /* Feedback colors - adjusted for dark mode */
+  --success: #66bb6a;
+  --success-light: #2d3b2d;
+  --warning: #ffa726;
+  --warning-light: #3b3320;
+  --error: #ef5350;
+  --error-light: #3b2525;
+  --info: #29b6f6;
+  --info-light: #1e2e33;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -701,148 +735,43 @@ footer {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Social Sharing Styles */
-.share-button {
-  background-color: #f5f5f5;
-  color: var(--text-primary);
-  border: 1px solid var(--border);
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 180px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 20px;
   padding: 6px 12px;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 0.85rem;
-  transition: all 0.2s;
+  font-size: 1rem;
+  transition: background-color 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-top: 8px;
+  color: var(--primary-text);
 }
 
-.share-button:hover {
-  background-color: #e8e8e8;
-  border-color: var(--border-focus);
+#dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
-.share-icon {
-  font-size: 1rem;
+#dark-mode-toggle:active {
+  transform: scale(0.95);
 }
 
-.share-modal-content {
-  max-width: 500px;
-  width: 90%;
-}
-
-#share-activity-details {
-  background-color: var(--background);
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-#share-activity-name {
-  color: var(--primary);
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-#share-activity-description {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-#share-activity-schedule {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-style: italic;
-}
-
-.share-buttons-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.share-platform-button {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: all 0.2s;
-  color: white;
-}
-
-.share-platform-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.platform-icon {
-  font-size: 1.3rem;
-  font-weight: bold;
-  width: 24px;
-  text-align: center;
-}
-
-.twitter-share {
-  background-color: #000000;
-}
-
-.twitter-share:hover {
-  background-color: #1a1a1a;
-}
-
-.facebook-share {
-  background-color: #1877f2;
-}
-
-.facebook-share:hover {
-  background-color: #145dbf;
-}
-
-.linkedin-share {
-  background-color: #0077b5;
-}
-
-.linkedin-share:hover {
-  background-color: #005f8f;
-}
-
-.email-share {
-  background-color: #ea4335;
-}
-
-.email-share:hover {
-  background-color: #c93629;
-}
-
-.copy-link {
-  background-color: #6c757d;
-}
-
-.copy-link:hover {
-  background-color: #545b62;
-}
-
-.share-message {
-  margin-top: 15px;
-  padding: 10px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.share-message.success {
-  background-color: var(--success-light);
-  color: var(--success);
-}
-
-.share-message.error {
-  background-color: var(--error-light);
-  color: var(--error);
+/* Adjust for mobile - reposition toggle below user login controls */
+@media (max-width: 767px) {
+  #dark-mode-toggle {
+    right: 10px;
+    top: 60px;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+  }
+  
+  #user-controls {
+    top: 10px;
+  }
 }
