@@ -978,6 +978,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initShareModal();
 
     // Update current share data
+    // Note: Currently shares the main page URL. For activity-specific URLs,
+    // the application would need to implement URL routing (e.g., /#activity-name)
     const shareText = `Check out ${activityName} at Mergington High School! ${description}`;
     const shareUrl = window.location.href;
     
